@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(45deg, #FFF, #006D77);
+    font-family: monospace;
+    transition: background 0.3s;
+}
+
+body.dark {
+    background: linear-gradient(45deg, #000, #00262A);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.stopwatchBox {
+    padding: 20px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+#lenz {
+    font-size: 2.5rem;
+    font-family: monospace;
+    color: #FFF;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.ctrls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+ 
+/* this styles the buttons */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+
+/* This styles the switch slider for light/dark mode */
+.switch {
+    display: block;
+    margin: 20px auto;
+    position: relative;
+    width: 60px;
+    height: 34px;
+}
+
+/* This styles the toggle button for light and dark mode */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #CCC;
+    border-radius: 34px;
+    transition: 0.4s;
+}
+
+/* This styles the round knob on the slider */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #FFF;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+/* Changes the color of the slider when in dark mode */
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+/* Moves the round knob to the right to indicate change to dark mode */
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+/* this styles the laps */
+#laps {
+    margin-top: 20px;
+    color: #FFF;
+    font-size: 1.7rem;
+    max-height: 150px; /* to ensure the even with mutiple laps there's no need to scroll from the stopwatch*/
+    overflow: auto;
+}
+
+
+@media (max-width: 414px) {
+    #lenz { 
+        font-size: 1.3rem; 
+    }
+    button { 
+        padding: 8px 15px; 
+        font-size: 0.9rem; 
+    }
+    #laps {
+    font-size: 0.9rem;
+    max-height: 100px;
+   }
+}
