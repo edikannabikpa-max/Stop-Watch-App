@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <div class="stopwatchBox">
+            <div id="lenz">00:00:00.00</div>
+            <div class="ctrls">
+                <button id="start">Start</button>
+                <button id="stop">Stop</button>
+                <button id="reset">Reset</button>
+                <button id="lap">Lap</button>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="modeSwitch">
+                <span class="slider"></span>
+            </label>
+            <div id="laps"></div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
